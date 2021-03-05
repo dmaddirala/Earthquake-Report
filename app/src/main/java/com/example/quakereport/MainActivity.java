@@ -148,35 +148,35 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     }
 
-//    private class NetworkAsyncTask extends AsyncTask<String, Void, ArrayList<EarthquakeData>> {
-//
-//
-//        @Override
-//        protected ArrayList<EarthquakeData> doInBackground(String... urls) {
-//            ArrayList<EarthquakeData> earthquakes = null;
-//
-//            if (urls.length < 1 || urls[0] == null) {
-//                return null;
-//            }
-//            earthquakes = Utils.fetchEarthquakeData(urls[0]);
-//            return earthquakes;
-//        }
-//
-//        @Override
-//        protected void onPostExecute(ArrayList<EarthquakeData> earthquakes) {
-//
-//            if (earthquakes == null) {
-//                Toast.makeText(MainActivity.this, "INVALID URL", Toast.LENGTH_SHORT).show();
-//                return;
-//            }
-//            MainActivity.this.earthquakes.clear();
-//            MainActivity.this.earthquakes.addAll(earthquakes);
-//            Log.v("TAG5", "" + earthquakes);
-//            Log.v("TAG5", "" + MainActivity.this.earthquakes);
-//            updateUI();
-//            Toast.makeText(MainActivity.this, "DONE", Toast.LENGTH_SHORT).show();
-//
-//        }
-//    }
+    private class NetworkAsyncTask extends AsyncTask<String, Void, ArrayList<EarthquakeData>> {
+
+
+        @Override
+        protected ArrayList<EarthquakeData> doInBackground(String... urls) {
+            ArrayList<EarthquakeData> earthquakes = null;
+
+            if (urls.length < 1 || urls[0] == null) {
+                return null;
+            }
+            earthquakes = Utils.fetchEarthquakeData(urls[0]);
+            return earthquakes;
+        }
+
+        @Override
+        protected void onPostExecute(ArrayList<EarthquakeData> earthquakes) {
+
+            if (earthquakes == null) {
+                Toast.makeText(MainActivity.this, "INVALID URL", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            MainActivity.this.earthquakes.clear();
+            MainActivity.this.earthquakes.addAll(earthquakes);
+            Log.v("TAG5", "" + earthquakes);
+            Log.v("TAG5", "" + MainActivity.this.earthquakes);
+            updateUI();
+            Toast.makeText(MainActivity.this, "DONE", Toast.LENGTH_SHORT).show();
+
+        }
+    }
 
 }

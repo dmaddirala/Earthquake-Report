@@ -19,6 +19,7 @@ public class EarthquakeData {
         this.url = url;
 
     }
+
     public double getMagnitude() { return magnitude; }
 
     public String getDistance(){ return distance; }
